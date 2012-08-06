@@ -17,3 +17,11 @@ Tk::Tile::Label.new(content) {text 'meters'}.grid( :column => 3, :row => 2, :sti
 TkWinfo.children(content).each {|w| TkGrid.configure w, :padx => 5, :pady => 5} # add padding to grid children
 f.focus # put focus on entry widget
 root.bind("Return") {calculate} # trigger calculate function if user presses 'Return'/'Enter'
+
+def calculate # create calculate function
+  begin
+     $meters.value = (0.3048*$feet*10000.0).round()/10000.0 # if number has been entered calculate meters from feet if
+  rescue
+     $meters.value = '' # if no number was entered print nothing
+  end
+end
