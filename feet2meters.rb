@@ -25,3 +25,5 @@ def calculate # create calculate function
      $meters.value = '' # if no number was entered print nothing
   end
 end
+
+Tk.mainloop # tell TK to enter main loop (make everything run)
