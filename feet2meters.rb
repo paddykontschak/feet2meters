@@ -9,3 +9,7 @@ $feet = TkVariable.new; $meters = TkVariable.new # variables for feet and meters
 f = Tk::Tile::Entry.new(content) {width 7; textvariable $feet}.grid( :column => 2, :row => 1, :sticky => 'we' ) # create entry widget .Type number of feet
 Tk::Tile::Label.new(content) {textvariable $meters}.grid( :column => 2, :row => 2, :sticky => 'we'); # create label. Will output number of meters
 Tk::Tile::Button.new(content) {text 'Calculate'; command {calculate}}.grid( :column => 3, :row => 3, :sticky => 'w') # create button. Click to calculate feet to meters
+
+Tk::Tile::Label.new(content) {text 'feet'}.grid( :column => 3, :row => 1, :sticky => 'w')                 ########################################################
+Tk::Tile::Label.new(content) {text 'is equivalent to'}.grid( :column => 1, :row => 2, :sticky => 'e')     # create text fields and position them inside the grid #
+Tk::Tile::Label.new(content) {text 'meters'}.grid( :column => 3, :row => 2, :sticky => 'w')               ########################################################
