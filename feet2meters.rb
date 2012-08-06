@@ -13,3 +13,7 @@ Tk::Tile::Button.new(content) {text 'Calculate'; command {calculate}}.grid( :col
 Tk::Tile::Label.new(content) {text 'feet'}.grid( :column => 3, :row => 1, :sticky => 'w')                 ########################################################
 Tk::Tile::Label.new(content) {text 'is equivalent to'}.grid( :column => 1, :row => 2, :sticky => 'e')     # create text fields and position them inside the grid #
 Tk::Tile::Label.new(content) {text 'meters'}.grid( :column => 3, :row => 2, :sticky => 'w')               ########################################################
+
+TkWinfo.children(content).each {|w| TkGrid.configure w, :padx => 5, :pady => 5} # add padding to grid children
+f.focus # put focus on entry widget
+root.bind("Return") {calculate} # trigger calculate function if user presses 'Return'/'Enter'
